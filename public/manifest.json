@@ -1,0 +1,27 @@
+{
+  "manifest_version": 3,
+  "name": "LilacSave",
+  "description": "Your private, offline-first Lilac Save library for bookmarks, highlights and notes.",
+  "version": "2.1.0",
+  "minimum_chrome_version": "116",
+  "permissions": ["activeTab", "alarms", "contextMenus", "identity", "identity.email", "scripting", "sidePanel", "storage"],
+  "host_permissions": ["https://www.googleapis.com/*", "https://oauth2.googleapis.com/*"],
+  "optional_host_permissions": ["http://*/*", "https://*/*"],
+  "oauth2": {
+    "client_id": "87919956484-tnfn49lcde5itqd67355j18o2voj1n9s.apps.googleusercontent.com",
+    "scopes": ["https://www.googleapis.com/auth/drive.file"]
+  },
+  "icons": { "16": "assets/icon-16.png", "32": "assets/icon-32.png", "48": "assets/icon-48.png", "128": "assets/icon-128.png" },
+  "background": { "service_worker": "background.js", "type": "module" },
+  "action": { "default_title": "Open LilacSave", "default_popup": "popup.html", "default_icon": { "16": "assets/icon-16.png", "32": "assets/icon-32.png", "48": "assets/icon-48.png", "128": "assets/icon-128.png" } },
+  "side_panel": { "default_path": "sidepanel.html" },
+  "options_page": "options.html",
+  "content_security_policy": { "extension_pages": "script-src 'self'; object-src 'none'; base-uri 'none'; frame-ancestors 'none'" },
+  "commands": {
+    "open-side-panel": { "suggested_key": { "default": "Alt+Shift+L", "mac": "Alt+Shift+L" }, "description": "Open LilacSave" },
+    "save-current-page": { "suggested_key": { "default": "Alt+Shift+S", "mac": "Alt+Shift+S" }, "description": "Save the current page" },
+    "new-note": { "suggested_key": { "default": "Alt+Shift+N", "mac": "Alt+Shift+N" }, "description": "Create a new note" },
+    "sync-now": { "suggested_key": { "default": "Alt+Shift+Y", "mac": "Alt+Shift+Y" }, "description": "Synchronize LilacSave" },
+    "save-selected-text": { "description": "Save selected text (assign a shortcut in Chrome)" }
+  }
+}
